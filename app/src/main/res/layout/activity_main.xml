@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--展示部分-->
+    <ViewStub
+        android:id="@+id/vs_show_home"
+        android:layout_above="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/include_show_home" />
+
+    <ViewStub
+        android:id="@+id/vs_show_attention"
+        android:layout_above="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/include_show_attention" />
+
+    <ViewStub
+        android:id="@+id/vs_show_notice"
+        android:layout_above="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/include_show_notice" />
+
+    <ViewStub
+        android:id="@+id/vs_show_my"
+        android:layout_above="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/include_show_my" />
+
+    <!--导航-->
+    <include
+        android:id="@+id/nav"
+        layout="@layout/include_nav"/>
+
+</RelativeLayout>

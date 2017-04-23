@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/nav"
+    android:orientation="vertical">
+    <!--顶部信息-->
+    <RelativeLayout
+        android:id="@+id/my_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <!--标题-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/my"
+            android:textColor="@color/colorBlackLittle"
+            android:textSize="16dp" />
+
+        <ImageButton
+            android:id="@+id/my_top_setting"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:onClick="redirectByTag"
+            android:tag="settings"
+            android:background="@mipmap/settings"
+            android:scaleType="centerInside" />
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/my_top_search"-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="3dp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:background="@mipmap/search"-->
+            <!--android:scaleType="centerInside" />-->
+    </RelativeLayout>
+
+    <!--<ScrollView-->
+    <!--android:id="@+id/my_scroll_view"-->
+    <!--android:scrollbars="none"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+
+    <!--用户的信息部分-->
+    <LinearLayout
+        android:id="@+id/my_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/my_info_border_top"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <!--头像-->
+        <com.yyren.happyread.view.RoundImageView
+            android:id="@+id/my_info_face"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/user_face" />
+
+        <!--姓名-->
+        <TextView
+            android:id="@+id/my_info_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@+id/my_info_face"
+            android:text="@string/my_info_name"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/my_info_edit"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/my_info_name"
+            android:src="@mipmap/edit" />
+
+    </LinearLayout>
+
+    <!--填充块-->
+    <LinearLayout
+        android:id="@+id/my_info_process"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/my_info_process"
+        android:orientation="horizontal" />
+
+
+    <ListView
+        android:id="@+id/my_info_list"
+        android:divider="#66666666"
+        android:scrollbars="none"
+        android:dividerHeight="0.1dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <!--</ScrollView>-->
+
+</LinearLayout>

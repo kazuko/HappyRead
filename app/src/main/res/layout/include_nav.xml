@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/nav_border_top"
+    android:orientation="horizontal">
+    <!--主页-->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/nav_selector"
+        android:onClick="changeShow"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:tag="home">
+
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/home_fill" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nav_home"
+            android:layout_centerHorizontal="true"
+            android:text="主页"
+            android:textSize="8dp" />
+    </RelativeLayout>
+
+    <!--发现-->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/nav_selector"
+        android:onClick="changeShow"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:tag="attention">
+
+        <ImageView
+            android:id="@+id/nav_attention"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/attention_favor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nav_attention"
+            android:layout_centerHorizontal="true"
+            android:text="发现"
+            android:textSize="8dp" />
+    </RelativeLayout>
+
+    <!--增加-->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="changeShow"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:tag="add">
+
+        <ImageView
+            android:id="@+id/nav_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="-2dp"
+            android:src="@mipmap/round_add_fill" />
+
+    </RelativeLayout>
+
+    <!--消息-->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/nav_selector"
+        android:onClick="changeShow"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:tag="notice">
+
+        <ImageView
+            android:id="@+id/nav_notice"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/notice" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nav_notice"
+            android:layout_centerHorizontal="true"
+            android:text="消息"
+            android:textSize="8dp" />
+    </RelativeLayout>
+
+    <!--我的-->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/nav_selector"
+        android:onClick="changeShow"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:tag="my">
+
+        <ImageView
+            android:id="@+id/nav_my"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/my" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nav_my"
+            android:layout_centerHorizontal="true"
+            android:text="我的"
+            android:textSize="8dp" />
+    </RelativeLayout>
+
+</LinearLayout>
