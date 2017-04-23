@@ -2,13 +2,19 @@ package com.yyren.happyread;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
@@ -21,6 +27,7 @@ public class MainActivity extends Activity {
     private LinearLayout my_info_layout;
     private Intent intent;
     private ListView my_info_list,notice_info_list;
+    private PopupWindow popWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,14 +71,47 @@ public class MainActivity extends Activity {
         notice_info_list = (ListView) findViewById(R.id.notice_info_list);
     }
 
+
+
     //改变导航栏显示
     public void changeShow(View view) {
         String tag = view.getTag().toString();
-        if (tag.equals("add"))
+        if (tag.equals("add")){
             tag = nav_type;
-        else
+            showAdd();
+        }else
             nav_type = tag;
         navSwitch(tag);
+    }
+
+    //显示add界面
+    private void showAdd(){
+        View parent = ((ViewGroup) this.findViewById(android.R.id.content)).getChildAt(0);
+        View popView = View.inflate(this, R.layout.activity_add, null);
+        popWindow = new PopupWindow(popView, RelativeLayout.MarginLayoutParams.MATCH_PARENT,RelativeLayout.MarginLayoutParams.WRAP_CONTENT);
+        popWindow.setAnimationStyle(R.style.AnimBottom);
+        popWindow.setFocusable(true);
+        popWindow.setOutsideTouchable(true);
+        popWindow.showAtLocation(parent,Gravity.BOTTOM , 0, 0);
+    }
+
+    //pop界面时间
+    public void addShowPop(View view){
+        switch(view.getTag().toString()){
+            case "type1":
+                Toast.makeText(MainActivity.this,"第一个",Toast.LENGTH_SHORT).show();
+                break;
+            case "type2":
+                Toast.makeText(MainActivity.this,"第二个",Toast.LENGTH_SHORT).show();
+                break;
+            case "type3":
+                Toast.makeText(MainActivity.this,"第三个",Toast.LENGTH_SHORT).show();
+                break;
+            case "cancel":
+                Toast.makeText(MainActivity.this,"取消",Toast.LENGTH_SHORT).show();
+                break;
+        }
+        popWindow.dismiss();
     }
 
     //导航栏切换
