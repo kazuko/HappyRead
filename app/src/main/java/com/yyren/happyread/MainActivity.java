@@ -2,14 +2,12 @@ package com.yyren.happyread;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -88,14 +86,14 @@ public class MainActivity extends Activity {
     private void showAdd(){
         View parent = ((ViewGroup) this.findViewById(android.R.id.content)).getChildAt(0);
         View popView = View.inflate(this, R.layout.activity_add, null);
-        popWindow = new PopupWindow(popView, RelativeLayout.MarginLayoutParams.MATCH_PARENT,RelativeLayout.MarginLayoutParams.WRAP_CONTENT);
-        popWindow.setAnimationStyle(R.style.AnimBottom);
+        popWindow = new PopupWindow(popView, RelativeLayout.MarginLayoutParams.MATCH_PARENT,RelativeLayout.MarginLayoutParams.MATCH_PARENT);
+        popWindow.setAnimationStyle(R.style.PopupAnimation);
         popWindow.setFocusable(true);
         popWindow.setOutsideTouchable(true);
-        popWindow.showAtLocation(parent,Gravity.BOTTOM , 0, 0);
+        popWindow.showAtLocation(parent,Gravity.CENTER , 0, 0);
     }
 
-    //pop界面时间
+    //pop界面事件
     public void addShowPop(View view){
         switch(view.getTag().toString()){
             case "type1":
